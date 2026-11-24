@@ -1,5 +1,5 @@
 #include "stats.h"
-
+#include <algorithm>
 double average(const std::vector<int>& scores) {
     if (scores.empty()) return 0.0;
     long long total = 0;
@@ -25,4 +25,12 @@ int minimum(const std::vector<int>& scores) {
     int worst = scores[0];
     for (int s : scores) if (s < worst) worst = s;
     return worst;
+}
+
+double median(std::vector<int> scores) {
+    if (scores.empty()) return 0.0;
+    std::sort(scores.begin(), scores.end());
+    const std::size_t n = scores.size();
+    if (n % 2 == 1) return scores[n / 2];
+    return (scores[n / 2 - 1] + scores[n / 2]) / 2.0;
 }

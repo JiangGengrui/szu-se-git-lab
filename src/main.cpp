@@ -25,5 +25,6 @@ int main() {
     std::cout << "avg   = " << average(scores) << "  (absent excluded)\n";
     std::cout << "max   = " << maximum(scores) << "\n";
     std::cout << "min   = " << minimum(scores) << "\n";
+    std::cout << "median= " << median(scores) << '\n';
     return 0;
 }

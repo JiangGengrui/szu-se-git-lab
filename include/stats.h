@@ -9,5 +9,6 @@ double average(const std::vector<int>& scores);
 int maximum(const std::vector<int>& scores);
 //返回最低分；scores为空时返回 0
 int minimum(const std::vector<int>& scores);
-
+//返回中位数；scores为空时返回 0.0
+double median(std::vector<int> scores);
 #endif
