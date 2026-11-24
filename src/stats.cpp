@@ -27,10 +27,18 @@ int minimum(const std::vector<int>& scores) {
     return worst;
 }
 
-double median(std::vector<int> scores) {
+double median(const std::vector<int>& scores) {
     if (scores.empty()) return 0.0;
-    std::sort(scores.begin(), scores.end());
-    const std::size_t n = scores.size();
-    if (n % 2 == 1) return scores[n / 2];
-    return (scores[n / 2 - 1] + scores[n / 2]) / 2.0;
+    std::vector<int> sorted_scores = scores;
+    std::sort(sorted_scores.begin(), sorted_scores.end());
+    const std::size_t n = sorted_scores.size();
+    if (n % 2 == 1) return sorted_scores[n / 2];
+    return (sorted_scores[n / 2 - 1] + sorted_scores[n / 2]) / 2.0;
+}
+
+double passRate(const std::vector<int>& scores) {
+    if (scores.empty()) return 0.0;
+    int passed = 0;
+    for (int s : scores) if (s >= 60) ++passed;
+    return static_cast<double>(passed) / scores.size();
 }
