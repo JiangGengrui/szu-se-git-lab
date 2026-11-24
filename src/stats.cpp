@@ -3,8 +3,14 @@
 double average(const std::vector<int>& scores) {
     if (scores.empty()) return 0.0;
     long long total = 0;
-    for (int s : scores) total += s;
-    return static_cast<double>(total) / scores.size();
+    int counted = 0;
+    for (int s : scores) {
+        if (s <= 0) continue; // Exclude absent scores (assumed to be non-positive)
+        total += s;
+        ++counted;
+    }
+    if (counted == 0) return 0.0;
+    return static_cast<double>(total) / counted;
 }
 
 int maximum(const std::vector<int>& scores) {
