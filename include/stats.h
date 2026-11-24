@@ -10,5 +10,7 @@ int maximum(const std::vector<int>& scores);
 //返回最低分；scores为空时返回 0
 int minimum(const std::vector<int>& scores);
 //返回中位数；scores为空时返回 0.0
-double median(std::vector<int> scores);
+double median(const std::vector<int>& scores);
+// 及格率：>= 60 分的人数占全部人数的比例，返回 0.0~1.0
+double passRate(const std::vector<int>& scores);
 #endif

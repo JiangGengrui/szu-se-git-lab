@@ -26,5 +26,6 @@ int main() {
     std::cout << "max    -> " << maximum(scores) << '\n';
     std::cout << "min    -> " << minimum(scores) << '\n';
     std::cout << "median -> " << median(scores) << '\n';
+    std::cout << "pass   -> " << passRate(scores) * 100.0 << "%\n";
     return 0;
 }
